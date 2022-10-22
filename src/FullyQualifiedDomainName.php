@@ -12,7 +12,7 @@ use function substr;
 
 class FullyQualifiedDomainName
 {
-    private function __construct(
+    final protected function __construct(
         private readonly string $fullyQualifiedName,
         private readonly string $name
     ) {
@@ -32,7 +32,7 @@ class FullyQualifiedDomainName
             Assert::regex($name, $pattern);
         }
 
-        return new self($name . '.', $name);
+        return new static($name . '.', $name);
     }
 
     public function getFullyQualifiedName(): string

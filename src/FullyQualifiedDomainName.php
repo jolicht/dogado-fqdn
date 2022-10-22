@@ -18,7 +18,7 @@ class FullyQualifiedDomainName
     ) {
     }
 
-    public static function fromString(string $name): self
+    public static function fromString(string $name): static
     {
         $name = rtrim($name, '.');
 

@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Jolicht\DogadoFqdn\Tests;
 
 use Jolicht\DogadoFqdn\FullyQualifiedDomainName;
+use Jolicht\DogadoFqdn\Tests\_files\TestDomainName;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -44,5 +45,11 @@ class FullyQualifiedDomainNameTest extends TestCase
     {
         $fqdn = FullyQualifiedDomainName::fromString('test.at.');
         $this->assertSame('test.at', $fqdn->getName());
+    }
+
+    public function test_fromString_IsSubclass_ReturnsSubclass(): void
+    {
+        $fqdn = TestDomainName::fromString('test.at.');
+        $this->assertInstanceOf(TestDomainName::class, $fqdn);
     }
 }

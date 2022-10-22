@@ -10,7 +10,7 @@ use function rtrim;
 use function str_starts_with;
 use function substr;
 
-final class FullyQualifiedDomainName
+class FullyQualifiedDomainName
 {
     private function __construct(
         private readonly string $fullyQualifiedName,
